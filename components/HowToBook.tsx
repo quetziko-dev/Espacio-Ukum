@@ -34,7 +34,7 @@ const HowToBook = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-light text-darkBg mb-4 tracking-wide" style={{ fontFamily: 'serif' }}>
-            ¿Cómo reservar en Espacio Ukum?
+            ¿Cómo reservar en Espacio Uk'um?
           </h2>
           <p className="text-lg text-darkBg/70 max-w-2xl mx-auto">
             Un proceso sencillo de 3 pasos para que tu experiencia sea exactamente lo que necesitas

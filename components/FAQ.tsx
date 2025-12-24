@@ -18,7 +18,7 @@ const FAQ = () => {
     },
     {
       question: '¿Se permiten mascotas?',
-      answer: 'Por el momento no recibimos mascotas en Espacio Ukum. Esto nos permite mantener el espacio tranquilo y libre de alérgenos para todos los huéspedes.'
+      answer: "Por el momento no recibimos mascotas en Espacio Uk'um. Esto nos permite mantener el espacio tranquilo y libre de alérgenos para todos los huéspedes."
     },
     {
       question: '¿Qué incluye la estancia?',
@@ -30,7 +30,7 @@ const FAQ = () => {
     },
     {
       question: '¿Se pueden organizar retiros o eventos privados?',
-      answer: 'Sí, Espacio Ukum es ideal para retiros personales, de parejas o grupos pequeños. También podemos diseñar experiencias grupales con talleres y sesiones. Escríbele a Anahí para platicar sobre tu visión y armar algo especial.'
+      answer: "Sí, Espacio Uk'um es ideal para retiros personales, de parejas o grupos pequeños. También podemos diseñar experiencias grupales con talleres y sesiones. Escríbele a Anahí para platicar sobre tu visión y armar algo especial."
     },
     {
       question: '¿Las sesiones de sound healing, yoga y terapias tienen costo adicional?',
@@ -38,7 +38,7 @@ const FAQ = () => {
     },
     {
       question: '¿Qué tan lejos está de la Ciudad de México?',
-      answer: 'Espacio Ukum está aproximadamente a 1 hora 30 minutos de la CDMX por autopista. Es un trayecto cómodo y directo, perfecto para escapadas de fin de semana sin complicaciones.'
+      answer: "Espacio Uk'um está aproximadamente a 1 hora 30 minutos de la CDMX por autopista. Es un trayecto cómodo y directo, perfecto para escapadas de fin de semana sin complicaciones."
     }
   ]
 

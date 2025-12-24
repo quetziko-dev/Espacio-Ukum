@@ -42,7 +42,7 @@ const Map = () => {
                 {LOCATION}
               </h3>
               <p className="text-darkBg/80 leading-relaxed mb-6">
-                Espacio Ukum se encuentra en una zona residencial tranquila, perfecta para desconectarse del ritmo 
+                Espacio Uk'um se encuentra en una zona residencial tranquila, perfecta para desconectarse del ritmo 
                 acelerado de la ciudad. Rodeado de vegetación y con un clima primaveral durante todo el año, 
                 es el lugar ideal para tu retiro de descanso y sanación.
               </p>
@@ -103,7 +103,7 @@ const Map = () => {
                 style={{ border: 0 }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Mapa de ubicación de Espacio Ukum"
+                title="Mapa de ubicación de Espacio Uk'um"
               />
             </div>
           </motion.div>

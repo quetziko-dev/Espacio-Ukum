@@ -65,7 +65,7 @@ const Reviews = () => {
             Lo que dicen nuestros huéspedes
           </h2>
           <p className="text-lg text-darkBg/70 max-w-2xl mx-auto">
-            Experiencias reales de personas que han descansado en Espacio Ukum
+            Experiencias reales de personas que han descansado en Espacio Uk'um
           </p>
         </motion.div>
 

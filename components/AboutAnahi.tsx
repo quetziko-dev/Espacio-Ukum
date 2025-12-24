@@ -31,7 +31,7 @@ const AboutAnahi = () => {
             <div className="relative aspect-[3/4] lg:aspect-square rounded-2xl overflow-hidden shadow-soft">
               <Image
                 src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80"
-                alt="Anahí Serrano Bandala - Anfitriona de Espacio Ukum"
+                alt="Anahí Serrano Bandala - Anfitriona de Espacio Uk'um"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -73,7 +73,7 @@ const AboutAnahi = () => {
                 persona.
               </p>
               <p>
-                Espacio Ukum nace de su visión de ofrecer un refugio donde naturaleza, silencio y prácticas 
+                Espacio Uk'um nace de su visión de ofrecer un refugio donde naturaleza, silencio y prácticas 
                 ancestrales se unan para facilitar el descanso profundo y la reconexión interior. Un lugar donde 
                 puedes simplemente ser, sin prisa ni expectativas.
               </p>

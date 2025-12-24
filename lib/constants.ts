@@ -124,15 +124,15 @@ export const CONTACT_INFO = {
 }
 
 export const SITE_INFO = {
-  name: 'Espacio Ukum',
+  name: "Espacio Uk'um",
   description: 'Retiro espiritual y centro de bienestar integral en Cuernavaca, Morelos',
   tagline: 'Tu santuario de paz y renovación',
   owner: OWNER_NAME,
 }
 
 export const META_TAGS = {
-  title: 'Espacio Ukum - Retiro Espiritual en Cuernavaca | Sound Healing, Yoga & Meditación',
-  description: 'Descubre Espacio Ukum, tu retiro de bienestar en Cuernavaca. Sound healing, yoga, meditación y terapias holísticas en un entorno natural único. Reserva tu experiencia transformadora.',
+  title: "Espacio Uk'um - Retiro Espiritual en Cuernavaca | Sound Healing, Yoga & Meditación",
+  description: "Descubre Espacio Uk'um, tu retiro de bienestar en Cuernavaca. Sound healing, yoga, meditación y terapias holísticas en un entorno natural único. Reserva tu experiencia transformadora.",
   keywords: 'espacio ukum, retiro espiritual cuernavaca, sound healing mexico, yoga cuernavaca, meditación morelos, terapia holística, retiro bienestar, anahí serrano',
   author: OWNER_NAME,
   ogImage: GALLERY_IMAGES[0],

@@ -6,7 +6,7 @@ import { WHATSAPP_NUMBER } from '@/lib/constants'
 
 const WhatsAppButton = () => {
   const handleClick = () => {
-    const message = encodeURIComponent('Hola Anahí, me interesa reservar o saber más sobre Espacio Ukum.')
+    const message = encodeURIComponent("Hola Anahí, me interesa reservar o saber más sobre Espacio Uk'um.")
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`
     window.open(whatsappUrl, '_blank')
   }
@@ -20,7 +20,7 @@ const WhatsAppButton = () => {
       whileTap={{ scale: 0.95 }}
       onClick={handleClick}
       className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 w-14 h-14 md:w-16 md:h-16 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center group"
-      aria-label="Abrir chat de WhatsApp con Espacio Ukum"
+      aria-label="Abrir chat de WhatsApp con Espacio Uk'um"
     >
       {/* WhatsApp Icon */}
       <svg

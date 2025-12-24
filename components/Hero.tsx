@@ -51,7 +51,7 @@ const Hero = () => {
           className="text-5xl sm:text-6xl md:text-7xl font-light text-lightBg mb-6 tracking-wider"
           style={{ fontFamily: 'serif' }}
         >
-          Espacio Ukum
+          Espacio Uk'um
         </motion.h1>
         
         {/* Subtitle */}

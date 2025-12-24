@@ -9,17 +9,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#2a9d8f',      // teal/verde agua
-        secondary: '#52b788',    // verde medio
-        accent: '#c9ada7',       // rosa tierra
-        earth: '#d4a574',        // dorado tierra
-        warm: '#e8b4a0',         // terracota suave
-        darkBg: '#1a1a1a',
-        lightBg: '#f8f9f7',
+        // Paleta oficial Espacio Uk'um
+        primary: '#754222',           // Marrón oficial
+        primaryDark: '#3D1A0C',       // Marrón oscuro
+        primaryLight: '#AD765C',      // Marrón medio
+        secondary: '#E09D82',         // Durazno oficial
+        secondaryLight: '#EBBEAC',    // Durazno medio
+        secondaryLighter: '#F2D9CE',  // Durazno claro
+        accent: '#038182',            // Turquesa oficial
+        accentLight: '#05ADAB',       // Turquesa claro
+        accentBright: '#07E3E0',      // Turquesa vibrante
+        bg: '#F0E6DA',                // Arena oficial (fondo)
+        bgLight: '#F2EFEB',           // Arena claro
+        bgDark: '#F0D4B4',            // Arena oscuro
+        // Mantener compatibilidad
+        darkBg: '#3D1A0C',            // Usar marrón oscuro
+        lightBg: '#F0E6DA',           // Usar arena oficial
+      },
+      fontFamily: {
+        sans: ['Roboto', 'sans-serif'],           // Editorial (body text)
+        serif: ['Libre Baskerville', 'serif'],    // Primaria (títulos)
+        display: ['Montserrat', 'sans-serif'],    // Secundaria (énfasis)
       },
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(to bottom, rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85))',
-        'section-gradient': 'linear-gradient(to bottom, #f8f9f7, #e8f3ef)',
+        'hero-gradient': 'linear-gradient(to bottom, rgba(61, 26, 12, 0.65), rgba(61, 26, 12, 0.85))',
+        'section-gradient': 'linear-gradient(to bottom, #F0E6DA, #F2D9CE)',
       },
       boxShadow: {
         'soft': '0 18px 45px rgba(15, 23, 42, 0.25)',

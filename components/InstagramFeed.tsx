@@ -15,7 +15,7 @@ const InstagramFeed = () => {
     {
       id: 1,
       image: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&q=80',
-      alt: 'Sound healing session at Espacio Ukum'
+      alt: "Sound healing session at Espacio Uk'um"
     },
     {
       id: 2,
@@ -40,7 +40,7 @@ const InstagramFeed = () => {
     {
       id: 6,
       image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80',
-      alt: 'Beautiful garden at Espacio Ukum'
+      alt: "Beautiful garden at Espacio Uk'um"
     }
   ]
 

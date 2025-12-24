@@ -65,7 +65,7 @@ const Gallery = () => {
             >
               <Image
                 src={src}
-                alt={`Espacio Ukum - Imagen ${index + 1}`}
+                alt={`Espacio Uk'um - Imagen ${index + 1}`}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -121,7 +121,7 @@ const Gallery = () => {
                 <div className="relative w-full h-full">
                   <Image
                     src={GALLERY_IMAGES[selectedImage]}
-                    alt={`Espacio Ukum - Imagen ${selectedImage + 1}`}
+                    alt={`Espacio Uk'um - Imagen ${selectedImage + 1}`}
                     fill
                     className="object-contain"
                     sizes="100vw"

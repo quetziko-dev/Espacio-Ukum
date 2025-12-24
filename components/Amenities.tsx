@@ -36,7 +36,7 @@ const Amenities = () => {
           >
             <Image
               src={GALLERY_IMAGES[0]}
-              alt="Espacio Ukum"
+              alt="Espacio Uk'um"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -54,7 +54,7 @@ const Amenities = () => {
             {/* Description */}
             <div>
               <p className="text-darkBg/80 text-lg leading-relaxed mb-6">
-                Ubicado en {LOCATION}, Espacio Ukum ofrece un lugar íntimo para retiros, 
+                Ubicado en {LOCATION}, Espacio Uk'um ofrece un lugar íntimo para retiros, 
                 sesiones de sound healing y descanso profundo.
               </p>
 
