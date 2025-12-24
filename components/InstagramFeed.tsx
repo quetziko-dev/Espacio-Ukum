@@ -44,44 +44,15 @@ const InstagramFeed = () => {
     }
   ]
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  }
-
-  const headerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' }
-    }
-  }
-
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.4, ease: 'easeOut' }
-    }
-  }
-
   return (
     <section id="instagram" className="py-20 bg-section-gradient scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          variants={headerVariants}
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-light text-darkBg mb-4 tracking-wide" style={{ fontFamily: 'serif' }}>
@@ -93,20 +64,17 @@ const InstagramFeed = () => {
         </motion.div>
 
         {/* Instagram Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-          className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10"
-        >
-          {instagramPosts.map((post) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+          {instagramPosts.map((post, index) => (
             <motion.a
               key={post.id}
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              variants={imageVariants}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
               className="group relative aspect-square rounded-2xl overflow-hidden shadow-soft hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
@@ -125,7 +93,7 @@ const InstagramFeed = () => {
               </div>
             </motion.a>
           ))}
-        </motion.div>
+        </div>
 
         {/* CTA Button */}
         <motion.div

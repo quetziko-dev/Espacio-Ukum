@@ -12,69 +12,30 @@ const Services = () => {
     'Terapias Holísticas': '90 min',
   } as const
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2
-      }
-    }
-  }
-
-  const headerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' }
-    }
-  }
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: 'easeOut' }
-    }
-  }
-
   return (
     <section id="servicios" className="py-20 bg-section-gradient scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={containerVariants}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <motion.h2 
-            variants={headerVariants}
+          <h2 
             className="text-4xl md:text-5xl font-light text-darkBg mb-4 tracking-wide"
             style={{ fontFamily: 'serif' }}
           >
             Sesiones y experiencias
-          </motion.h2>
-          <motion.p 
-            variants={headerVariants}
-            className="text-lg text-darkBg/70 max-w-2xl mx-auto"
-          >
+          </h2>
+          <p className="text-lg text-darkBg/70 max-w-2xl mx-auto">
             Cada sesión está diseñada con respeto y cuidado para acompañarte en tu proceso. También ofrecemos talleres y experiencias personalizadas según lo que necesites.
-          </motion.p>
+          </p>
         </motion.div>
 
         {/* Services Grid */}
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {SERVICES.map((service, index) => {
             const Icon = service.icon
             const duration = serviceDurations[service.name as keyof typeof serviceDurations]
@@ -82,7 +43,10 @@ const Services = () => {
             return (
               <motion.div
                 key={index}
-                variants={cardVariants}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                viewport={{ once: true }}
                 whileHover={{ 
                   y: -4,
                   transition: { duration: 0.2 }
@@ -111,7 +75,7 @@ const Services = () => {
               </motion.div>
             )
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

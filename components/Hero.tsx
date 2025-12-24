@@ -16,29 +16,6 @@ const Hero = () => {
     }
   }
 
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-        staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' }
-    }
-  }
-
   const services = [
     'Sound Healing',
     'Yoga',
@@ -61,14 +38,16 @@ const Hero = () => {
 
       {/* Content Container */}
       <motion.div 
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
         className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-2xl mx-auto"
       >
         {/* Title */}
         <motion.h1 
-          variants={itemVariants}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           className="text-5xl sm:text-6xl md:text-7xl font-light text-lightBg mb-6 tracking-wider"
           style={{ fontFamily: 'serif' }}
         >
@@ -77,14 +56,18 @@ const Hero = () => {
         
         {/* Subtitle */}
         <motion.p 
-          variants={itemVariants}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
           className="text-xl sm:text-2xl text-lightBg/90 mb-4 font-light leading-relaxed"
         >
           Retiro de descanso y conexión en Cuernavaca, Morelos
         </motion.p>
         
         <motion.p 
-          variants={itemVariants}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.7 }}
           className="text-lg text-lightBg/80 mb-8 font-light"
         >
           Con Anahí Serrano Bandala, tu anfitriona en este espacio de sanación
@@ -92,7 +75,9 @@ const Hero = () => {
         
         {/* Services List */}
         <motion.div 
-          variants={itemVariants}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.9 }}
           className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-12"
         >
           {services.map((service, index) => (
@@ -105,7 +90,9 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <motion.div 
-          variants={itemVariants}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.1 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a

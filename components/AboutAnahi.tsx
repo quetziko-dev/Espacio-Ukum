@@ -16,54 +16,16 @@ const AboutAnahi = () => {
     'Conexión con la naturaleza y el silencio'
   ]
 
-  const imageVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
-    }
-  }
-
-  const contentVariants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: 'easeOut', delay: 0.2 }
-    }
-  }
-
-  const listVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.5
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.4 }
-    }
-  }
-
   return (
     <section id="sobre-anahi" className="py-20 bg-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Photo */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            variants={imageVariants}
             className="relative"
           >
             <div className="relative aspect-[3/4] lg:aspect-square rounded-2xl overflow-hidden shadow-soft">
@@ -80,10 +42,10 @@ const AboutAnahi = () => {
 
           {/* Right Column - Content */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            variants={contentVariants}
             className="space-y-6"
           >
             {/* Title */}
@@ -118,24 +80,21 @@ const AboutAnahi = () => {
             </div>
 
             {/* Strengths List */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={listVariants}
-              className="space-y-3 pt-4"
-            >
+            <div className="space-y-3 pt-4">
               {strengths.map((strength, index) => (
                 <motion.div
                   key={index}
-                  variants={itemVariants}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.5 + index * 0.15 }}
+                  viewport={{ once: true }}
                   className="flex items-start gap-3"
                 >
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-darkBg">{strength}</span>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
 
             {/* CTA Button */}
             <div className="pt-4">

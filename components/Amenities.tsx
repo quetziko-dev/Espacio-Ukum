@@ -5,44 +5,6 @@ import { motion } from 'framer-motion'
 import { AMENITIES, ROOMS, PRICES, LOCATION, GALLERY_IMAGES } from '@/lib/constants'
 
 const Amenities = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.2
-      }
-    }
-  }
-
-  const imageVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
-    }
-  }
-
-  const contentVariants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4 }
-    }
-  }
-
   return (
     <section id="amenidades" className="py-20 bg-lightBg scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,10 +28,10 @@ const Amenities = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
           {/* Left Column - Image */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            variants={imageVariants}
             className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-soft"
           >
             <Image
@@ -83,10 +45,10 @@ const Amenities = () => {
 
           {/* Right Column - Content */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            variants={contentVariants}
             className="flex flex-col justify-center space-y-8"
           >
             {/* Description */}
@@ -116,12 +78,7 @@ const Amenities = () => {
         </div>
 
         {/* Amenities Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-        >
+        <div>
           <h3 className="text-2xl font-light text-darkBg mb-8 text-center md:text-left">
             Amenidades incluidas
           </h3>
@@ -129,7 +86,10 @@ const Amenities = () => {
             {AMENITIES.map((amenity, index) => (
               <motion.div
                 key={index}
-                variants={itemVariants}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
                 className="bg-darkBg border border-white/10 rounded-xl px-4 py-3 flex items-center gap-3 shadow-soft hover:border-primary/60 hover:shadow-lg transition-all duration-300"
               >
@@ -138,7 +98,7 @@ const Amenities = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

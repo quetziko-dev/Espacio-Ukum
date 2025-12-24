@@ -7,42 +7,15 @@ import { LOCATION } from '@/lib/constants'
 const Map = () => {
   const googleMapsUrl = 'https://maps.app.goo.gl/hVjPP689853bEWdu5'
 
-  const textVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
-    }
-  }
-
-  const mapVariants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
-    }
-  }
-
-  const headerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' }
-    }
-  }
-
   return (
     <section id="ubicacion" className="py-16 bg-section-gradient scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          variants={headerVariants}
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-light text-darkBg mb-4 tracking-wide" style={{ fontFamily: 'serif' }}>
@@ -57,10 +30,10 @@ const Map = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Left Column - Text */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            variants={textVariants}
             className="flex flex-col justify-center space-y-6"
           >
             {/* Location */}
@@ -116,10 +89,10 @@ const Map = () => {
 
           {/* Right Column - Map */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            variants={mapVariants}
             className="relative w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-soft hover:ring-2 hover:ring-primary/40 transition-all duration-300"
           >
             <div className="w-full h-full">

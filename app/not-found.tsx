@@ -5,39 +5,19 @@ import Link from 'next/link'
 import { AlertCircle, Home } from 'lucide-react'
 
 export default function NotFound() {
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-        staggerChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 }
-    }
-  }
-
   return (
     <div className="min-h-screen bg-section-gradient flex items-center justify-center px-4">
       <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
         className="text-center max-w-2xl"
       >
         {/* Icon */}
         <motion.div
-          variants={itemVariants}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="flex justify-center mb-8"
         >
           <AlertCircle className="w-20 h-20 text-primary" strokeWidth={1.5} />
@@ -45,7 +25,9 @@ export default function NotFound() {
 
         {/* 404 Number */}
         <motion.div
-          variants={itemVariants}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="mb-6"
         >
           <h1 className="text-8xl md:text-9xl font-light text-primary mb-2" style={{ fontFamily: 'serif' }}>
@@ -55,7 +37,9 @@ export default function NotFound() {
 
         {/* Title */}
         <motion.h2
-          variants={itemVariants}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           className="text-3xl md:text-4xl font-light text-darkBg mb-4 tracking-wide"
           style={{ fontFamily: 'serif' }}
         >
@@ -64,7 +48,9 @@ export default function NotFound() {
 
         {/* Subtitle */}
         <motion.p
-          variants={itemVariants}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
           className="text-lg text-darkBg/70 mb-10 leading-relaxed"
         >
           La página que buscas no existe o fue movida. Pero no te preocupes, siempre puedes volver al inicio y encontrar tu camino.
@@ -72,7 +58,9 @@ export default function NotFound() {
 
         {/* CTA Button */}
         <motion.div
-          variants={itemVariants}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
         >
           <Link
             href="/"
@@ -85,7 +73,9 @@ export default function NotFound() {
 
         {/* Decorative text */}
         <motion.p
-          variants={itemVariants}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
           className="mt-12 text-sm text-darkBg/50 italic"
         >
           "El camino no es siempre recto, pero siempre lleva a donde necesitas estar."

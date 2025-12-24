@@ -46,24 +46,15 @@ const FAQ = () => {
     setOpenIndex(openIndex === index ? null : index)
   }
 
-  const headerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' }
-    }
-  }
-
   return (
     <section id="faq" className="py-20 bg-darkBg scroll-mt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          variants={headerVariants}
           className="text-center mb-16"
         >
           {/* Decorative Icon */}
@@ -120,7 +111,7 @@ const FAQ = () => {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
                     <div className="px-5 pb-4 pt-2">

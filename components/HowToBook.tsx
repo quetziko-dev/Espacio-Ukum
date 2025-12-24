@@ -22,44 +22,15 @@ const HowToBook = () => {
     }
   ]
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
-  }
-
-  const headerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' }
-    }
-  }
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: 'easeOut' }
-    }
-  }
-
   return (
     <section id="como-reservar" className="py-20 bg-section-gradient scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          variants={headerVariants}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-light text-darkBg mb-4 tracking-wide" style={{ fontFamily: 'serif' }}>
@@ -71,17 +42,15 @@ const HowToBook = () => {
         </motion.div>
 
         {/* Steps Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
         >
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              variants={cardVariants}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
               className="bg-lightBg rounded-2xl shadow-soft p-6 hover:shadow-lg transition-all duration-300"
             >
               {/* Number */}
@@ -100,7 +69,7 @@ const HowToBook = () => {
               </p>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* CTA Button */}
         <motion.div

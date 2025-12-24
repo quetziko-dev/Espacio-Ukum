@@ -40,51 +40,11 @@ const Navbar = () => {
     setIsMenuOpen(false)
   }
 
-  const navbarVariants = {
-    hidden: { y: -100, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  }
-
-  const linkVariants = {
-    hidden: { y: -20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.4 }
-    }
-  }
-
-  const mobileMenuVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.95,
-      transition: { duration: 0.2 }
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.3,
-        staggerChildren: 0.05,
-        delayChildren: 0.1
-      }
-    }
-  }
-
   return (
     <motion.nav
-      initial="hidden"
-      animate="visible"
-      variants={navbarVariants}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-darkBg/90 backdrop-blur-xl shadow-soft border-b border-white/10'
@@ -94,7 +54,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div variants={linkVariants} className="flex items-center">
+          <motion.div 
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className="flex items-center"
+          >
             <a
               href="#inicio"
               onClick={(e) => scrollToSection(e, '#inicio')}
@@ -106,12 +71,14 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <div className="flex items-baseline space-x-6">
-              {menuItems.map((item) => (
+              {menuItems.map((item, index) => (
                 <motion.a
                   key={item.href}
                   href={item.href}
                   onClick={(e: React.MouseEvent<HTMLAnchorElement>) => scrollToSection(e, item.href)}
-                  variants={linkVariants}
+                  initial={{ y: -20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                   className="text-lightBg hover:text-primary px-3 py-2 text-sm font-light transition-all duration-300 relative group"
                 >
                   {item.label}
@@ -123,7 +90,9 @@ const Navbar = () => {
               href={AIRBNB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              variants={linkVariants}
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 1 }}
               className="bg-primary text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-secondary shadow-soft hover:shadow-lg transition-all duration-300"
             >
               Reservar en Airbnb
@@ -161,19 +130,21 @@ const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={mobileMenuVariants}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.3 }}
             className="md:hidden bg-darkBg/95 backdrop-blur-xl border-t border-white/10"
           >
             <div className="px-4 pt-4 pb-6 space-y-1">
-              {menuItems.map((item) => (
+              {menuItems.map((item, index) => (
                 <motion.a
                   key={item.href}
                   href={item.href}
                   onClick={(e: React.MouseEvent<HTMLAnchorElement>) => scrollToSection(e, item.href)}
-                  variants={linkVariants}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
                   className="text-lightBg hover:text-primary block px-3 py-3 text-base font-light transition-colors duration-300"
                 >
                   {item.label}
@@ -183,7 +154,9 @@ const Navbar = () => {
                 href={AIRBNB_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                variants={linkVariants}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
                 className="block w-full mt-4 bg-primary text-white px-4 py-3 rounded-full text-center font-medium hover:bg-secondary shadow-soft transition-all duration-300"
               >
                 Reservar en Airbnb
